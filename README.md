@@ -29,8 +29,8 @@
 
 | 이름 | GitHub | 학년 |
 |------|--------|------|
-| 이재현 | [@hallow0312](https://github.com/hallow0312) | 3|
-| 이상혁 | [@KaneBigNose](https://github.com/KaneBigNose) | 3|
+| 이재현 | [@hallow0312](https://github.com/hallow0312) |  3 |
+| 이상혁 | [@KaneBigNose](https://github.com/KaneBigNose) |  3 |
 
 
 ---
