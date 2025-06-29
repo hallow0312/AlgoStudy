@@ -25,6 +25,14 @@
 - 코딩 테스트 준비
 - 꾸준한 코드 리뷰 & 소통 능력 키우기
 
+## 👥 참여자
+
+| 이름 | GitHub | 역할 |
+|------|--------|------|
+| 이재현 | [@hallow0312](https://github.com/hallow0312) | |
+| 이상혁 | [@KaneBigNose](https://github.com/KaneBigNose) | |
+
+
 ---
 
 <p align="center">
