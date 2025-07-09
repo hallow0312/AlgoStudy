@@ -1,15 +1,15 @@
 ﻿#include<bits/stdc++.h>
 using namespace std;
 int n, m;
+int index;
 void  Init()
 {
-	int index = 0;
-
+	index = 0;
 	set<string>_set;
 	cin >> n >> m;
 	for (int i = 0; i < n; i++)
 	{
-		string s; 
+		string s;
 		cin >> s;
 		_set.insert(s);
 	}
