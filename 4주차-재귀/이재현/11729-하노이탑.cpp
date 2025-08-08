@@ -1,36 +1,51 @@
-﻿#include<bits/stdc++.h>
+﻿#include <iostream>
 using namespace std;
-#define IOS_BASE ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-int num;
 
-void Hanoi(int num, int start, int middle, int end)
+int n;
+
+int arr[15] = { -1, };
+
+int total = 0;
+
+bool check_queen(int idx, int value)
 {
-    if (num == 1)
-    {
-        cout << start << " " << end << '\n';
-        return;
-    }
-    Hanoi(num - 1,start, end ,middle );
-    cout << start << " " << end << '\n';
-    Hanoi(num - 1, middle, start, end);
-        
+	for (int i = 0; i < idx; i++)
+	{
+		if (arr[i] == value || abs(arr[i] - value) == abs(i - idx))
+		{
+			return false;
+		}
+	}
+
+	if (idx == n - 1)
+	{
+		total++;
+	}
+
+	return true;
 }
-void Init()
+
+void queen_batch(int idx)
 {
-    cin >> num;
-    int result = 1;
-    for (int i = 0; i < num; i++)
-    {
-        result *= 2;
-    }
-    cout << result - 1 << '\n';
-    Hanoi(num, 1, 2, 3);
+	for (int i = 0; i < n; i++)
+	{
+		if (check_queen(idx, i))
+		{
+			arr[idx] = i;
+			queen_batch(idx + 1);
+		}
+	}
 }
 
 int main()
 {
-    IOS_BASE
-        Init();
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
 
-    return 0;
+	cin >> n;
+
+	queen_batch(0);
+
+	cout << total << "\n";
 }
