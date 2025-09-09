@@ -38,7 +38,7 @@ int Answer()
 void Init()
 {
 	cin >> n;
-	memset(Dynamic, 0, sizeof(Dynamic));
+	memset(Dynamic, -1, sizeof(Dynamic));
 	memset(Reverse, 0, sizeof(Reverse));
 	for (int i = 0; i < n; i++)
 	{
