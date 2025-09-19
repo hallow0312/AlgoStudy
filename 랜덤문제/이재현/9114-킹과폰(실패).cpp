@@ -15,9 +15,7 @@ struct Node {
 
 struct State { Node white; Node black; };
 
-inline bool InBounds(const Node& p) {
-    return p.x >= 0 && p.x < SIZE && p.y >= 0 && p.y < SIZE;
-}
+inline bool InBounds(const Node& p) { return p.x >= 0 && p.x < SIZE && p.y >= 0 && p.y < SIZE; }
 
 int dx[8] = { -1,-1,-1,0,0,1,1,1 };
 int dy[8] = { -1,0,1,-1,1,-1,0,1 };
@@ -35,11 +33,13 @@ bool Test(Node white, Node black) {
     visited[white.x][white.y][black.x][black.y] = true;
 
     while (!q.empty()) {
-        auto cur = q.front(); q.pop();
+        auto cur = q.front();
+        q.pop();
         Node w = cur.white;
         Node b = cur.black;
 
-        for (int k = 0; k < 8; ++k) {
+        for (int k = 0; k < 8; ++k)
+        {
             Node nw = { w.x + dx[k], w.y + dy[k] };
             if (!InBounds(nw)) continue;
             if (chess[nw.x][nw.y] == FORBIDDEN || chess[nw.x][nw.y] == DANGER) continue;
@@ -50,7 +50,7 @@ bool Test(Node white, Node black) {
             if (InBounds(atk1) && chess[atk1.x][atk1.y] != FORBIDDEN && nw == atk1) continue;
             if (InBounds(atk2) && chess[atk2.x][atk2.y] != FORBIDDEN && nw == atk2) continue;
 
-            Node nb = { b.x - 1, b.y };
+            Node nb = { b.x-1  , b.y };
             if (!InBounds(nb)) continue;
 
             if (chess[nb.x][nb.y] == FORBIDDEN)
