@@ -9,6 +9,7 @@ int n, m; bitset<MAX + 1> s;
 
 void Init()
 {
+    
     cin >> n >> m;
     int x = min(n, m);
     LL result = 1;
